@@ -2,6 +2,12 @@
 //INCLUDE THE ACCESS TOKEN FILE
 
 include 'accessToken.php';
+
+if(isset($_POST['phone_number'])){
+  $Phone_number = $_POST['phone_number'];
+  //  $orderNo = $_POST['orderNo'];
+   $Amount = $_POST['amount'];
+
 date_default_timezone_set('Africa/Nairobi');
 $processrequestUrl = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 $callbackurl = 'https://1c95-105-161-14-223.ngrok-free.app/projectpresentation/callback.php';
@@ -10,8 +16,8 @@ $BusinessShortCode = '174379';
 $Timestamp = date('YmdHis');
 // ENCRIPT  DATA TO GET PASSWORD
 $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
-$phone = '254706599924';//phone number to receive the stk push
-$money = '1';
+$phone = $Phone_number;//phone number to receive the stk push
+$money = $Amount;
 $PartyA = $phone;
 $PartyB = '254708374149';
 $AccountReference = 'sikata softwares';
@@ -48,4 +54,6 @@ $CheckoutRequestID = $data->CheckoutRequestID;
 $ResponseCode = $data->ResponseCode;
 if ($ResponseCode == "0") {
   echo "The CheckoutRequestID for this transaction is : " . $CheckoutRequestID;
+}
+
 }

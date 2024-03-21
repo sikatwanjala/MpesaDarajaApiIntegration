@@ -1,13 +1,13 @@
 <?php
 
-include('stkpush.php');
+include('STKPush.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>interface</title>
+    <title>Document</title>
     <style>
         @import url(http://fonts.googleapis.com/css?family=Lato:400,100,300,700,900);
         @import url(http://fonts.googleapis.com/css?family=Source+code+pro:400,200,300,500,600,700,900);
@@ -43,7 +43,6 @@ include('stkpush.php');
             }
         .card .row.number{
             background: #242852;
-            margin-bottom: 50px;
         }
         .cardholder .info, .number .info{
             position: relative;
@@ -98,9 +97,12 @@ include('stkpush.php');
 <body>
 
 <div class="container">
-    <form action='./stkpush.php' method='POST'>
+    <!-- <form action='
+    ' method='POST'> -->
+     <form action='stkpush.php' method='POST'> 
+
 <div class="price">
-    <h1>STK PUSH PAYMENT TEST</h1>
+    <h1>Awesome Payment of bills</h1>
 
 </div>
 <div class="card_container">
@@ -126,24 +128,14 @@ echo $errmsg;
 endif;
 ?>
     
- </div>
+        </div>
         <div  class="row number">
             <div class="info">
                 <input type="hidden" name="orderNo" value="#02JDI2I3R" />
                 <label for="cardnumber">
                     Phone Number
                 </label>
-                <input id="cardnumber" type="text" name="phone_number" maxlength="12" placeholder="+254700000000"/> 
-            </div>
-        </div>
-
-        <div  class="row number">
-            <div class="info">
-                <input type="hidden" name="orderNo" value="#02JDI2I3R" />
-                <label for="amount">
-                    Enter Amount
-                </label>
-                <input id="amount" type="text" name="amount" maxlength="6" placeholder="Sh. 0000"/> 
+                <input id="cardnumber" type="text" name="phone_number" maxlength="10" placeholder="+254700000000"/> 
             </div>
         </div>
     </div>
