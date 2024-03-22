@@ -1,7 +1,5 @@
-<?php
 
-include('stkpush.php');
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,15 +147,16 @@ endif;
     </div>
 </div>
 <div class="button">
-    <button type="submit"><i class="ion-locked"></i>
+    <button type="submit" name="pay"><i class="ion-locked"></i>
     Confirm and Pay</button>
-
 </div>
 </form>
 <p style="color: #8F92C3; line-height: 1.7; margin-top: 5rem;"> Copyright 2024 | All Rights Reserved | Developed By Wanjala Filex</p>
 </div>
 
-
-    
 </body>
 </html>
+<?php
+
+include('stkpush.php');
+?>
