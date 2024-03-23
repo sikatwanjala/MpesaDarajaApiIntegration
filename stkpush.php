@@ -3,10 +3,10 @@
 
 include 'accessToken.php';
 
-// if(isset($_POST['pay'])){
-//   $Phone_number = $_POST['phone_number'];
+if(isset($_POST['pay'])){
+  $Phone_number = $_POST['phone_number'];
 //   //  $orderNo = $_POST['orderNo'];
-//    $Total = $_POST['amount'];
+   $Total = $_POST['amount'];
 
 date_default_timezone_set('Africa/Nairobi');
 $processrequestUrl = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
@@ -17,10 +17,10 @@ $Timestamp = date('YmdHis');
 // ENCRIPT  DATA TO GET PASSWORD
 $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
 //STK PUSH INITIATED SUCCESSFULLY
-$phone =  254706599924;//254721683010;//2//$Phone_number;//phone number to receive the stk push 
-$money = 1;//$Total;//
+$phone = $Phone_number;  //254706599924;//254721683010;//2////phone number to receive the stk push 
+$money = $Total;//
 $PartyA = $phone;
-$PartyB = '254706599924';
+$PartyB = '254720705137';
 $AccountReference = 'sikata wanjala filex SHOP';
 $TransactionDesc = 'stkpush test';
 $Amount = $money;
@@ -57,4 +57,4 @@ if ($ResponseCode == "0") {
   echo "The CheckoutRequestID for this transaction is : " . $CheckoutRequestID;
 }
 
-// }
+}
